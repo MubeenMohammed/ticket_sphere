@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class TicketSellingPage extends StatelessWidget {
   const TicketSellingPage({super.key});
@@ -23,7 +22,7 @@ class TicketSellingPage extends StatelessWidget {
           ),
           child: Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(
                   height: 50,
@@ -35,21 +34,29 @@ class TicketSellingPage extends StatelessWidget {
                       icon: const Icon(
                         Icons.arrow_back,
                         color: Colors.white,
+                        size: 28,
                       ),
                     ),
                     const SizedBox(
-                      width: 80,
+                      width: 60,
                     ),
                     const Text(
-                      "Sell a New Ticket",
+                      "Sell A New Ticket",
                       style: TextStyle(
                         color: Color.fromARGB(251, 245, 246, 246),
-                        fontSize: 20,
+                        fontSize: 25,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ],
                 ),
+                const SizedBox(
+                  height: 40,
+                ),
+                const Text(
+                  "Event Name",
+                  style: TextStyle(color: Colors.white),
+                )
               ],
             ),
           ),
