@@ -4,6 +4,8 @@ import 'package:flutter/widgets.dart';
 class TicketSellingPage extends StatelessWidget {
   const TicketSellingPage({super.key});
 
+  void backButtonPressed() {}
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,7 +21,38 @@ class TicketSellingPage extends StatelessWidget {
               end: Alignment.bottomCenter,
             ),
           ),
-          child: ,
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                const SizedBox(
+                  height: 50,
+                ),
+                Row(
+                  children: [
+                    IconButton(
+                      onPressed: backButtonPressed,
+                      icon: const Icon(
+                        Icons.arrow_back,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 80,
+                    ),
+                    const Text(
+                      "Sell a New Ticket",
+                      style: TextStyle(
+                        color: Color.fromARGB(251, 245, 246, 246),
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );
