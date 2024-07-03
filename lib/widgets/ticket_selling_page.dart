@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ticket_sphere/models/input_model.dart';
 
 class TicketSellingPage extends StatelessWidget {
   const TicketSellingPage({super.key});
@@ -7,70 +8,90 @@ class TicketSellingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Color.fromARGB(255, 14, 49, 136),
-                Color.fromARGB(255, 163, 46, 3),
-              ],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-            ),
+    return Scaffold(
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Colors.black,
+              Colors.green,
+              Colors.blue,
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
           ),
-          child: Center(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(
-                  height: 50,
-                ),
-                Row(
+        ),
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(
+                height: 60,
+              ),
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: backButtonPressed,
+                    icon: const Icon(
+                      Icons.arrow_back,
+                      color: Colors.white,
+                      size: 28,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 60,
+                  ),
+                  const Text(
+                    "Sell A New Ticket",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 25,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              const Padding(
+                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                child: Column(
                   children: [
-                    IconButton(
-                      onPressed: backButtonPressed,
-                      icon: const Icon(
-                        Icons.arrow_back,
-                        color: Colors.white,
-                        size: 28,
-                      ),
+                    InputModel(
+                      inputHeader: "Event Name",
+                      inputPlaceHolder: "Name of the Event",
+                      isLongInput: false,
                     ),
-                    const SizedBox(
-                      width: 60,
+                    InputModel(
+                      inputHeader: "Description",
+                      inputPlaceHolder: "Details About Tickets and Event",
+                      isLongInput: true,
                     ),
-                    const Text(
-                      "Sell A New Ticket",
-                      style: TextStyle(
-                        color: Color.fromARGB(251, 245, 246, 246),
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    InputModel(
+                      inputHeader: "Date & Time",
+                      inputPlaceHolder: "Select Date",
+                      isLongInput: false,
+                    ),
+                    InputModel(
+                      inputHeader: "Location",
+                      inputPlaceHolder: "Name of the Venu",
+                      isLongInput: false,
+                    ),
+                    InputModel(
+                      inputHeader: "Starting Bid",
+                      inputPlaceHolder: "Add Starting Bid",
+                      isLongInput: false,
+                    ),
+                    InputModel(
+                      inputHeader: "Number of Tickets",
+                      inputPlaceHolder: "Number of Tickets",
+                      isLongInput: false,
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 40,
-                ),
-                const Text(
-                  "Event Name",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                  ),
-                ),
-                const SizedBox(
-                  height: 40,
-                ),
-                const TextField(
-                  decoration: InputDecoration(
-                      fillColor: Colors.white,
-                      border: OutlineInputBorder(),
-                      labelText: "Name of the Event"),
-                )
-              ],
-            ),
+              )
+            ],
           ),
         ),
       ),
