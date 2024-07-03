@@ -55,7 +55,19 @@ class TicketSellingPage extends StatelessWidget {
                 ),
                 const Text(
                   "Event Name",
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                  ),
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                const TextField(
+                  decoration: InputDecoration(
+                      fillColor: Colors.white,
+                      border: OutlineInputBorder(),
+                      labelText: "Name of the Event"),
                 )
               ],
             ),
