@@ -49,13 +49,24 @@ class ProfilePage extends StatelessWidget {
                 cardIcon: Icons.mail,
                 personName: "johndoe@gmail.com",
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 30),
               ElevatedButton(
                 onPressed: () {},
-                child: const Row(
-                  children: [
-                    Text("Change Password and Pin"),
-                  ],
+                child: Container(
+                  padding: const EdgeInsets.all(20),
+                  child: const Row(
+                    children: [
+                      Text(
+                        "Change Password and Pin",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                        ),
+                      ),
+                      SizedBox(width: 20),
+                      Icon(Icons.arrow_forward),
+                    ],
+                  ),
                 ),
               )
             ],
