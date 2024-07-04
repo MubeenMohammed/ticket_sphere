@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ticket_sphere/widgets/ticket_selling_page.dart';
 
 class SellerHomePage extends StatefulWidget {
-  const SellerHomePage({super.key});
+  const SellerHomePage({super.key, required this.switchScreenToSellingTicket});
+
+  final Function switchScreenToSellingTicket;
 
   @override
   State<SellerHomePage> createState() {
@@ -63,7 +64,7 @@ class _SellerHomePageState extends State<SellerHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Add your onPressed code here!
+          widget.switchScreenToSellingTicket("ticket-selling-page");
         },
         backgroundColor: Colors.teal,
         child: const Icon(Icons.add),
