@@ -35,6 +35,7 @@ class _SellerHomePageState extends State<SellerHomePage> {
             end: Alignment.bottomRight,
           ),
         ),
+        
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
