@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ticket_sphere/widgets/profile_page.dart';
 
 class SellerHomePage extends StatefulWidget {
   const SellerHomePage({super.key, required this.switchScreenToSellingTicket});
@@ -35,7 +36,7 @@ class _SellerHomePageState extends State<SellerHomePage> {
             end: Alignment.bottomRight,
           ),
         ),
-        
+        child: const ProfilePage(),
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
