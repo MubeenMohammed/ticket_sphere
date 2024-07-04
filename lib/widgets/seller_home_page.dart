@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:ticket_sphere/widgets/home_section.dart';
 import 'package:ticket_sphere/widgets/profile_page.dart';
 
 class SellerHomePage extends StatefulWidget {
@@ -14,10 +16,23 @@ class SellerHomePage extends StatefulWidget {
 
 class _SellerHomePageState extends State<SellerHomePage> {
   int _selectedIndex = 0;
+  Widget currentSection = const HomeSection();
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      if (index == 0) {
+        currentSection = const HomeSection();
+      }
+      if (index == 1) {
+        currentSection = const ProfilePage();
+      }
+      if (index == 2) {
+        currentSection = const ProfilePage();
+      }
+      if (index == 3) {
+        currentSection = const ProfilePage();
+      }
     });
   }
 
@@ -36,7 +51,7 @@ class _SellerHomePageState extends State<SellerHomePage> {
             end: Alignment.bottomRight,
           ),
         ),
-        child: const ProfilePage(),
+        child: currentSection,
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
