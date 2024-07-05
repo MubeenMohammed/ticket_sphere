@@ -49,8 +49,48 @@ class HomeSection extends StatelessWidget {
           width: 2000,
         ),
         Container(
+          padding: const EdgeInsets.fromLTRB(0, 50, 0, 10),
           decoration: const BoxDecoration(
-            
+            color: Colors.black,
+          ),
+          child: Column(
+            children: [
+              Container(
+                padding: const EdgeInsets.fromLTRB(25, 10, 25, 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      "Hottest Offers",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: const Row(
+                        children: [
+                          Text(
+                            "See all",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 67, 197, 125),
+                              fontSize: 19,
+                            ),
+                          ),
+                          Icon(
+                            Icons.arrow_forward,
+                            color: Color.fromARGB(255, 67, 197, 125),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              
+            ],
           ),
         )
       ],
