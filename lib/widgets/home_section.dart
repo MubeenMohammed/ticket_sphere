@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:ticket_sphere/models/ticket_model.dart';
 
 class HomeSection extends StatelessWidget {
   const HomeSection({super.key});
@@ -10,13 +9,16 @@ class HomeSection extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-            height: 50,
-            child: Container(
-                decoration: const BoxDecoration(color: Colors.black))),
+          height: 50,
+          child: Container(
+            decoration: const BoxDecoration(color: Colors.black),
+          ),
+        ),
         Container(
-          decoration:
-              const BoxDecoration(color: Color.fromARGB(255, 17, 11, 18)),
-          padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
+          decoration: const BoxDecoration(
+            color: Color.fromARGB(255, 17, 11, 18),
+          ),
+          padding: const EdgeInsets.fromLTRB(0, 15, 10, 15),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -49,14 +51,15 @@ class HomeSection extends StatelessWidget {
           width: 2000,
         ),
         Container(
-          padding: const EdgeInsets.fromLTRB(0, 50, 0, 10),
+          padding: const EdgeInsets.fromLTRB(0, 15, 0, 10),
           decoration: const BoxDecoration(
             color: Colors.black,
           ),
           child: Column(
             children: [
+              Image.asset("assets/scrollable_icon.png"),
               Container(
-                padding: const EdgeInsets.fromLTRB(25, 10, 25, 10),
+                padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -76,7 +79,7 @@ class HomeSection extends StatelessWidget {
                             "See all",
                             style: TextStyle(
                               color: Color.fromARGB(255, 67, 197, 125),
-                              fontSize: 19,
+                              fontSize: 17,
                             ),
                           ),
                           Icon(
@@ -89,7 +92,16 @@ class HomeSection extends StatelessWidget {
                   ],
                 ),
               ),
-              
+              const SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    TicketModel(),
+                    TicketModel(),
+                    TicketModel(),
+                  ],
+                ),
+              )
             ],
           ),
         )

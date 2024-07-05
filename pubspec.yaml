@@ -61,6 +61,9 @@ flutter:
     - assets/profile-photo.jpg
     - assets/ticket_sphere_home_logo.png
     - assets/ticket_sphere_logo.png
+    - assets/scrollable_icon.png
+    - assets/ticket_images/concert-image-1.jpg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
