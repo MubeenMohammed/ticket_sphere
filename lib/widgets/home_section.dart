@@ -7,6 +7,7 @@ class HomeSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
           height: 50,
@@ -106,6 +107,31 @@ class HomeSection extends StatelessWidget {
                 ),
               )
             ],
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.fromLTRB(10, 5, 0, 10),
+          child: const Text(
+            "Recommended",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 17,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 20),
+          decoration: const BoxDecoration(
+            color: Colors.black,
+          ),
+          child: const SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                
+              ],
+            ),
           ),
         )
       ],
