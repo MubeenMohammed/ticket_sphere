@@ -47,8 +47,9 @@ class HomeSection extends StatelessWidget {
         ),
         Image.asset(
           "assets/ticket_sphere_home_logo.png",
-          fit: BoxFit.contain,
+          fit: BoxFit.cover,
           width: 2000,
+          height: 200,
         ),
         Container(
           padding: const EdgeInsets.fromLTRB(0, 15, 0, 10),
@@ -97,7 +98,9 @@ class HomeSection extends StatelessWidget {
                 child: Row(
                   children: [
                     TicketModel(),
+                    SizedBox(width: 10),
                     TicketModel(),
+                    SizedBox(width: 10),
                     TicketModel(),
                   ],
                 ),
