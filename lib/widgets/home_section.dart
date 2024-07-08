@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ticket_sphere/models/recommended_ticket_model.dart';
 import 'package:ticket_sphere/models/ticket_model.dart';
 
 class HomeSection extends StatelessWidget {
@@ -110,7 +111,7 @@ class HomeSection extends StatelessWidget {
           ),
         ),
         Container(
-          padding: const EdgeInsets.fromLTRB(10, 5, 0, 10),
+          padding: const EdgeInsets.fromLTRB(10, 5, 0, 5),
           child: const Text(
             "Recommended",
             style: TextStyle(
@@ -121,7 +122,7 @@ class HomeSection extends StatelessWidget {
           ),
         ),
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 19),
           decoration: const BoxDecoration(
             color: Colors.black,
           ),
@@ -129,7 +130,12 @@ class HomeSection extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             child: Row(
               children: [
-                
+                SizedBox(width: 10),
+                RecommendedTicketModel(),
+                SizedBox(width: 10),
+                RecommendedTicketModel(),
+                SizedBox(width: 10),
+                RecommendedTicketModel(),
               ],
             ),
           ),
