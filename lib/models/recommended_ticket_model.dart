@@ -28,7 +28,6 @@ class RecommendedTicketModel extends StatelessWidget {
             const SizedBox(width: 10),
             const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   "Frigma Night Club Ticket",
@@ -37,6 +36,7 @@ class RecommendedTicketModel extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
+                SizedBox(height: 2),
                 Row(
                   children: [
                     Icon(
@@ -54,6 +54,7 @@ class RecommendedTicketModel extends StatelessWidget {
                     ),
                   ],
                 ),
+                SizedBox(height: 2),
                 Row(
                   children: [
                     Icon(

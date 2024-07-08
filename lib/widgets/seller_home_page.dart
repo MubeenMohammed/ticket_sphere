@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:ticket_sphere/widgets/chats_page.dart';
 import 'package:ticket_sphere/widgets/home_section.dart';
 import 'package:ticket_sphere/widgets/profile_page.dart';
+import 'package:ticket_sphere/widgets/search_page.dart';
 
 class SellerHomePage extends StatefulWidget {
   const SellerHomePage({super.key, required this.switchScreenToSellingTicket});
@@ -25,10 +27,10 @@ class _SellerHomePageState extends State<SellerHomePage> {
         currentSection = const HomeSection();
       }
       if (index == 1) {
-        currentSection = const ProfilePage();
+        currentSection = const SearchPage();
       }
       if (index == 2) {
-        currentSection = const ProfilePage();
+        currentSection = const ChatsPage();
       }
       if (index == 3) {
         currentSection = const ProfilePage();
