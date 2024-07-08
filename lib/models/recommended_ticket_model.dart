@@ -25,8 +25,58 @@ class RecommendedTicketModel extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            Column(
-              
+            const SizedBox(width: 10),
+            const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Frigma Night Club Ticket",
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.person,
+                      color: Colors.grey,
+                      size: 20,
+                    ),
+                    SizedBox(width: 10),
+                    Text(
+                      "John Doe",
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 11,
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.calendar_month,
+                      size: 20,
+                    ),
+                    SizedBox(width: 10),
+                    Text(
+                      "Nov 13th | 08:00 Pm",
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 11,
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Text(
+                      "\$200 Bid",
+                      style:
+                          TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
+                    )
+                  ],
+                )
+              ],
             )
           ],
         ),
