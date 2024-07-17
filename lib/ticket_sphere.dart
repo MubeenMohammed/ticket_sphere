@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_project/app_pages/login_section/login_section_container.dart';
 import 'package:new_project/app_pages/navigation_pages/navigation_container.dart';
 import 'package:new_project/app_pages/ticket_selling_pages/ticket_selling_page.dart';
 
@@ -12,7 +13,7 @@ class TicketSphere extends StatefulWidget {
 }
 
 class TicketSphereState extends State<TicketSphere> {
- String activeScreen = "home-page";
+  String activeScreen = "login-page";
 
   void switchScreen(String screen) {
     setState(() {
@@ -23,7 +24,6 @@ class TicketSphereState extends State<TicketSphere> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Home Page",
       home: Scaffold(
         body: Container(
           decoration: const BoxDecoration(
@@ -37,11 +37,19 @@ class TicketSphereState extends State<TicketSphere> {
               end: Alignment.bottomRight,
             ),
           ),
-          child: activeScreen == 'ticket-selling-page'
-              ? TicketSellingPage(switchToHomePage: switchScreen)
-              : NavigationContainer(switchScreenToSellingTicket: switchScreen),
+          child: _selectActiveScreen(),
         ),
       ),
     );
+  }
+
+  Widget _selectActiveScreen() {
+    if (activeScreen == 'ticket-selling-page') {
+      return TicketSellingPage(switchToHomePage: switchScreen);
+    } else if (activeScreen == 'home-page') {
+      return NavigationContainer(switchScreenToSellingTicket: switchScreen);
+    } else {
+      return const LoginSectionContainer();
+    }
   }
 }
