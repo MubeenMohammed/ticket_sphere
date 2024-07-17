@@ -1,4 +1,4 @@
-package com.example.ticket_sphere
+package com.example.new_project
 
 import io.flutter.embedding.android.FlutterActivity
 

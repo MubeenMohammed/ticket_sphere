@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ticket_sphere/models/input_model.dart';
+import 'package:new_project/widgets/ticket_selling_input_model.dart';
 
 class TicketSellingPage extends StatelessWidget {
   const TicketSellingPage({
@@ -69,32 +69,32 @@ class TicketSellingPage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const InputModel(
+                      const TicketSellingInputModel(
                         inputHeader: "Event Name",
                         inputPlaceHolder: "Name of the Event",
                         isLongInput: false,
                       ),
-                      const InputModel(
+                      const TicketSellingInputModel(
                         inputHeader: "Description",
                         inputPlaceHolder: "Details About Tickets and Event",
                         isLongInput: true,
                       ),
-                      const InputModel(
+                      const TicketSellingInputModel(
                         inputHeader: "Date & Time",
                         inputPlaceHolder: "Select Date",
                         isLongInput: false,
                       ),
-                      const InputModel(
+                      const TicketSellingInputModel(
                         inputHeader: "Location",
                         inputPlaceHolder: "Name of the Venu",
                         isLongInput: false,
                       ),
-                      const InputModel(
+                      const TicketSellingInputModel(
                         inputHeader: "Starting Bid",
                         inputPlaceHolder: "Add Starting Bid",
                         isLongInput: false,
                       ),
-                      const InputModel(
+                      const TicketSellingInputModel(
                         inputHeader: "Number of Tickets",
                         inputPlaceHolder: "Number of Tickets",
                         isLongInput: false,

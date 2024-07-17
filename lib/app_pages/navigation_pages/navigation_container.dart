@@ -1,30 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:ticket_sphere/widgets/chats_page.dart';
-import 'package:ticket_sphere/widgets/home_section.dart';
-import 'package:ticket_sphere/widgets/profile_page.dart';
-import 'package:ticket_sphere/widgets/search_page.dart';
+import 'package:new_project/app_pages/navigation_pages/chats_page.dart';
+import 'package:new_project/app_pages/navigation_pages/home_page.dart';
+import 'package:new_project/app_pages/navigation_pages/profile_page.dart';
+import 'package:new_project/app_pages/navigation_pages/search_page.dart';
 
-class SellerHomePage extends StatefulWidget {
-  const SellerHomePage({super.key, required this.switchScreenToSellingTicket});
+
+class NavigationContainer extends StatefulWidget {
+  const NavigationContainer({super.key, required this.switchScreenToSellingTicket});
 
   final Function switchScreenToSellingTicket;
 
   @override
-  State<SellerHomePage> createState() {
-    return _SellerHomePageState();
+  State<NavigationContainer> createState() {
+    return _NavigationContainerState();
   }
 }
 
-class _SellerHomePageState extends State<SellerHomePage> {
+class _NavigationContainerState extends State<NavigationContainer> {
   int _selectedIndex = 0;
-  Widget currentSection = const HomeSection();
+  Widget currentSection = const HomePage();
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
       if (index == 0) {
-        currentSection = const HomeSection();
+        currentSection = const HomePage();
       }
       if (index == 1) {
         currentSection = const SearchPage();

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ticket_sphere/widgets/home_page.dart';
+import 'package:new_project/ticket_sphere.dart';
+
 void main() {
-  runApp(const HomePage());
+  runApp(const TicketSphere());
 }

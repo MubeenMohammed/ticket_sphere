@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ticket_sphere/models/profile_card.dart';
-import 'package:ticket_sphere/models/profile_info_card.dart';
+import 'package:new_project/widgets/profile_card.dart';
+import 'package:new_project/widgets/profile_info_card.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});

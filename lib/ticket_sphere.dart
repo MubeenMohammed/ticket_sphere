@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:ticket_sphere/widgets/seller_home_page.dart';
-import 'package:ticket_sphere/widgets/ticket_selling_page.dart';
+import 'package:new_project/app_pages/navigation_pages/navigation_container.dart';
+import 'package:new_project/app_pages/ticket_selling_pages/ticket_selling_page.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class TicketSphere extends StatefulWidget {
+  const TicketSphere({super.key});
 
   @override
-  State<HomePage> createState() {
-    return _HomePageState();
+  State<TicketSphere> createState() {
+    return TicketSphereState();
   }
 }
 
-class _HomePageState extends State<HomePage> {
-  String activeScreen = "home-page";
+class TicketSphereState extends State<TicketSphere> {
+ String activeScreen = "home-page";
 
   void switchScreen(String screen) {
     setState(() {
@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
           ),
           child: activeScreen == 'ticket-selling-page'
               ? TicketSellingPage(switchToHomePage: switchScreen)
-              : SellerHomePage(switchScreenToSellingTicket: switchScreen),
+              : NavigationContainer(switchScreenToSellingTicket: switchScreen),
         ),
       ),
     );

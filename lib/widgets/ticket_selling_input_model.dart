@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class InputModel extends StatelessWidget {
-  const InputModel({
+class TicketSellingInputModel extends StatelessWidget {
+  const TicketSellingInputModel({
     super.key,
     required this.inputHeader,
     required this.inputPlaceHolder,

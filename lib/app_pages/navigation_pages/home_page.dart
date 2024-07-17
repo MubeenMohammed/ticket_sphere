@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ticket_sphere/models/recommended_ticket_model.dart';
-import 'package:ticket_sphere/models/ticket_model.dart';
+import 'package:new_project/widgets/recommended_ticket_model.dart';
+import 'package:new_project/widgets/ticket_model.dart';
 
-class HomeSection extends StatelessWidget {
-  const HomeSection({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
