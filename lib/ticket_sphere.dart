@@ -52,7 +52,7 @@ class TicketSphereState extends State<TicketSphere> {
       return NavigationContainer(switchScreenToSellingTicket: switchMainScreen);
     }
      else {
-      return const LoginSectionContainer();
+      return LoginSectionContainer(switchToHomePage: switchMainScreen);
     }
   }
 }

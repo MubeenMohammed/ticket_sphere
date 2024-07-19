@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 
 class SignupPage extends StatefulWidget {
-  const SignupPage({super.key, required this.switchLoginScreen});
+  const SignupPage(
+      {super.key,
+      required this.switchLoginScreen,
+      required this.switchToHomePage});
 
   final Function switchLoginScreen;
+  final Function switchToHomePage;
 
   @override
   State<SignupPage> createState() {
@@ -164,7 +168,9 @@ class _SignupPageState extends State<SignupPage> {
           ),
           const SizedBox(height: 20),
           OutlinedButton(
-            onPressed: () {},
+            onPressed: () {
+              widget.switchToHomePage("home-page");
+            },
             style: const ButtonStyle(
               padding: WidgetStatePropertyAll(
                 EdgeInsets.symmetric(horizontal: 100, vertical: 15),

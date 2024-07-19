@@ -3,7 +3,9 @@ import 'package:new_project/app_pages/login_section/login_page.dart';
 import 'package:new_project/app_pages/login_section/signup_page.dart';
 
 class LoginSectionContainer extends StatefulWidget {
-  const LoginSectionContainer({super.key});
+  const LoginSectionContainer({super.key, required this.switchToHomePage});
+
+  final Function switchToHomePage;
 
   @override
   State<LoginSectionContainer> createState() {
@@ -37,9 +39,13 @@ class _LoginSectionContainerState extends State<LoginSectionContainer> {
 
   Widget currentActiveLoginScreen() {
     if (activeLoginScreen == "signup-page") {
-      return SignupPage(switchLoginScreen: loginSwitchScreen);
+      return SignupPage(
+          switchLoginScreen: loginSwitchScreen,
+          switchToHomePage: widget.switchToHomePage);
     } else {
-      return LoginPage(switchLoginScreen: loginSwitchScreen);
+      return LoginPage(
+          switchLoginScreen: loginSwitchScreen,
+          switchToHomePage: widget.switchToHomePage);
     }
   }
 }
