@@ -12,9 +12,9 @@ class LoginSectionContainer extends StatefulWidget {
 }
 
 class _LoginSectionContainerState extends State<LoginSectionContainer> {
-  String activeLoginScreen = 'Login-page';
+  String activeLoginScreen = 'login-page';
 
-  void switchScreen(String screen) {
+  void loginSwitchScreen(String screen) {
     setState(() {
       activeLoginScreen = screen;
     });
@@ -36,10 +36,10 @@ class _LoginSectionContainerState extends State<LoginSectionContainer> {
   }
 
   Widget currentActiveLoginScreen() {
-    if (activeLoginScreen == "SignUp-Page") {
-      return const SignupPage();
+    if (activeLoginScreen == "signup-page") {
+      return SignupPage(switchLoginScreen: loginSwitchScreen);
     } else {
-      return LoginPage(switchLoginScreen: switchScreen);
+      return LoginPage(switchLoginScreen: loginSwitchScreen);
     }
   }
 }

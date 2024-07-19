@@ -143,7 +143,7 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                widget.switchLoginScreen("SignUp-Page");
+                widget.switchLoginScreen("signup-page");
               },
               style: ElevatedButton.styleFrom(
                 padding:

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SignupPage extends StatefulWidget {
-  const SignupPage({super.key});
+  const SignupPage({super.key, required this.switchLoginScreen});
+
+  final Function switchLoginScreen;
 
   @override
   State<SignupPage> createState() {
@@ -177,24 +179,28 @@ class _SignupPageState extends State<SignupPage> {
             ),
           ),
           const SizedBox(height: 15),
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 "Already have account?",
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: 16,
                 ),
               ),
-              SizedBox(width: 10),
-              Text(
-                "Login",
-                style: TextStyle(
-                    color: Color.fromARGB(255, 32, 192, 128),
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold),
-              )
+              TextButton(
+                onPressed: () {
+                  widget.switchLoginScreen("login-page");
+                },
+                child: const Text(
+                  "Login",
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 32, 192, 128),
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
             ],
           )
         ],

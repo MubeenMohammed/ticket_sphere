@@ -15,7 +15,7 @@ class TicketSphere extends StatefulWidget {
 class TicketSphereState extends State<TicketSphere> {
   String activeScreen = "login-page";
 
-  void switchScreen(String screen) {
+  void switchMainScreen(String screen) {
     setState(() {
       activeScreen = screen;
     });
@@ -26,6 +26,8 @@ class TicketSphereState extends State<TicketSphere> {
     return MaterialApp(
       home: Scaffold(
         body: Container(
+          width: double.infinity,
+          height: double.infinity,
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [
@@ -45,10 +47,11 @@ class TicketSphereState extends State<TicketSphere> {
 
   Widget _selectActiveScreen() {
     if (activeScreen == 'ticket-selling-page') {
-      return TicketSellingPage(switchToHomePage: switchScreen);
+      return TicketSellingPage(switchToHomePage: switchMainScreen);
     } else if (activeScreen == 'home-page') {
-      return NavigationContainer(switchScreenToSellingTicket: switchScreen);
-    } else {
+      return NavigationContainer(switchScreenToSellingTicket: switchMainScreen);
+    }
+     else {
       return const LoginSectionContainer();
     }
   }
