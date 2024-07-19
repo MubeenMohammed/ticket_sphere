@@ -29,7 +29,7 @@ class _LoginSectionContainerState extends State<LoginSectionContainer> {
             image: AssetImage(
               'assets/login_background.jpg',
             ),
-            fit: BoxFit.cover,
+            fit: BoxFit.fill,
           ),
         ),
         child: currentActiveLoginScreen());
