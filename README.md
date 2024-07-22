@@ -1,4 +1,4 @@
-# new_project
+# ticket_sphere
 
 A new Flutter project.
 

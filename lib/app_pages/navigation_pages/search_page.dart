@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:new_project/widgets/ticket_model.dart';
+import 'package:ticket_sphere/widgets/ticket_model.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:new_project/app_pages/login_section/login_section_container.dart';
-import 'package:new_project/app_pages/navigation_pages/navigation_container.dart';
-import 'package:new_project/app_pages/ticket_selling_pages/ticket_selling_page.dart';
+import 'package:ticket_sphere/app_pages/login_section/login_section_container.dart';
+import 'package:ticket_sphere/app_pages/navigation_pages/navigation_container.dart';
+import 'package:ticket_sphere/app_pages/ticket_selling_pages/ticket_selling_page.dart';
 
 class TicketSphere extends StatefulWidget {
   const TicketSphere({super.key});

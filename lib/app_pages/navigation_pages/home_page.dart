@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:new_project/widgets/recommended_ticket_model.dart';
-import 'package:new_project/widgets/ticket_model.dart';
+import 'package:ticket_sphere/widgets/recommended_ticket_model.dart';
+import 'package:ticket_sphere/widgets/ticket_model.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

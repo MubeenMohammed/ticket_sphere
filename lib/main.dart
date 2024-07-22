@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:new_project/ticket_sphere.dart';
+import 'package:ticket_sphere/ticket_sphere.dart';
 
 void main() {
   runApp(const TicketSphere());

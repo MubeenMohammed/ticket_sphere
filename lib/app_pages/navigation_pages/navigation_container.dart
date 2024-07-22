@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:new_project/app_pages/navigation_pages/chats_page.dart';
-import 'package:new_project/app_pages/navigation_pages/home_page.dart';
-import 'package:new_project/app_pages/navigation_pages/profile_page.dart';
-import 'package:new_project/app_pages/navigation_pages/search_page.dart';
+import 'package:ticket_sphere/app_pages/navigation_pages/chats_page.dart';
+import 'package:ticket_sphere/app_pages/navigation_pages/home_page.dart';
+import 'package:ticket_sphere/app_pages/navigation_pages/profile_page.dart';
+import 'package:ticket_sphere/app_pages/navigation_pages/search_page.dart';
 
 class NavigationContainer extends StatefulWidget {
   const NavigationContainer(
@@ -33,14 +33,10 @@ class _NavigationContainerState extends State<NavigationContainer> {
         currentSection = const ChatsPage();
       }
       if (index == 3) {
-        currentSection = ProfilePage(
-          
-        );
+        currentSection = const ProfilePage();
       }
     });
   }
-
-
 
   @override
   Widget build(BuildContext context) {

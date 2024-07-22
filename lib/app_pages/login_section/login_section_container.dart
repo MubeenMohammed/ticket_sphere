@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:new_project/app_pages/login_section/login_page.dart';
-import 'package:new_project/app_pages/login_section/signup_page.dart';
+import 'package:ticket_sphere/app_pages/login_section/login_page.dart';
+import 'package:ticket_sphere/app_pages/login_section/signup_page.dart';
 
 class LoginSectionContainer extends StatefulWidget {
   const LoginSectionContainer({super.key, required this.switchToHomePage});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:new_project/widgets/ticket_selling_input_model.dart';
+import 'package:ticket_sphere/widgets/ticket_selling_input_model.dart';
 
 class TicketSellingPage extends StatelessWidget {
   const TicketSellingPage({
