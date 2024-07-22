@@ -49,9 +49,10 @@ class TicketSphereState extends State<TicketSphere> {
     if (activeScreen == 'ticket-selling-page') {
       return TicketSellingPage(switchToHomePage: switchMainScreen);
     } else if (activeScreen == 'home-page') {
-      return NavigationContainer(switchScreenToSellingTicket: switchMainScreen);
-    }
-     else {
+      return NavigationContainer(
+        switchScreenToSellingTicket: switchMainScreen,
+      );
+    } else {
       return LoginSectionContainer(switchToHomePage: switchMainScreen);
     }
   }

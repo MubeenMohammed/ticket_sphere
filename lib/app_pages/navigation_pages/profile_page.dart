@@ -5,25 +5,15 @@ import 'package:new_project/widgets/profile_info_card.dart';
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
-  void backButtonPressed() {}
-
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         const SizedBox(height: 60),
-        Row(
+        const Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            IconButton(
-              onPressed: backButtonPressed,
-              icon: const Icon(
-                Icons.arrow_back,
-                color: Colors.white,
-                size: 28,
-              ),
-            ),
-            const SizedBox(width: 115),
-            const Text(
+            Text(
               "Profile",
               style: TextStyle(
                 color: Colors.white,

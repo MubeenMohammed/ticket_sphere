@@ -4,9 +4,9 @@ import 'package:new_project/app_pages/navigation_pages/home_page.dart';
 import 'package:new_project/app_pages/navigation_pages/profile_page.dart';
 import 'package:new_project/app_pages/navigation_pages/search_page.dart';
 
-
 class NavigationContainer extends StatefulWidget {
-  const NavigationContainer({super.key, required this.switchScreenToSellingTicket});
+  const NavigationContainer(
+      {super.key, required this.switchScreenToSellingTicket});
 
   final Function switchScreenToSellingTicket;
 
@@ -33,10 +33,14 @@ class _NavigationContainerState extends State<NavigationContainer> {
         currentSection = const ChatsPage();
       }
       if (index == 3) {
-        currentSection = const ProfilePage();
+        currentSection = ProfilePage(
+          
+        );
       }
     });
   }
+
+
 
   @override
   Widget build(BuildContext context) {
