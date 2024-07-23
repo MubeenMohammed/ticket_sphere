@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "266508648069",
+    "project_id": "ticket-sphere-f316b",
+    "storage_bucket": "ticket-sphere-f316b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:266508648069:android:839a8bad4648a2725bb3ec",
+        "android_client_info": {
+          "package_name": "com.example.ticket_sphere"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCo789YKnHXLQihAapsCchvrj_Qzt8UIQo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

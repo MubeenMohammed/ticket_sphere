@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class SignupPage extends StatefulWidget {
@@ -17,6 +18,30 @@ class SignupPage extends StatefulWidget {
 
 class _SignupPageState extends State<SignupPage> {
   bool _obscureText = true;
+  final TextEditingController _fullNameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
+
+  void signupClicked() {
+    if (_passwordController.text == _confirmPasswordController.text) {
+      FirebaseAuth.instance
+          .createUserWithEmailAndPassword(
+        email: _emailController.text,
+        password: _passwordController.text,
+      )
+          .then(
+        (onValue) {
+          widget.switchLoginScreen("login-page");
+        },
+      ).onError(
+        (error, stackTrace) {
+          print("Error ${error.toString()}");
+        },
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,8 +70,9 @@ class _SignupPageState extends State<SignupPage> {
             style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
           ),
           const SizedBox(height: 25),
-          const TextField(
-            decoration: InputDecoration(
+          TextField(
+            controller: _fullNameController,
+            decoration: const InputDecoration(
               hintText: "Full Name",
               hintStyle: TextStyle(
                 color: Color.fromARGB(255, 196, 190, 190),
@@ -65,8 +91,9 @@ class _SignupPageState extends State<SignupPage> {
             ),
           ),
           const SizedBox(height: 10),
-          const TextField(
-            decoration: InputDecoration(
+          TextField(
+            controller: _emailController,
+            decoration: const InputDecoration(
               hintText: "Email",
               hintStyle: TextStyle(
                 color: Color.fromARGB(255, 196, 190, 190),
@@ -86,6 +113,7 @@ class _SignupPageState extends State<SignupPage> {
           ),
           const SizedBox(height: 10),
           TextField(
+            controller: _passwordController,
             decoration: InputDecoration(
               hintText: "Password",
               hintStyle: const TextStyle(
@@ -116,6 +144,7 @@ class _SignupPageState extends State<SignupPage> {
           ),
           const SizedBox(height: 10),
           TextField(
+            controller: _confirmPasswordController,
             decoration: InputDecoration(
               hintText: "Confirm Password",
               hintStyle: const TextStyle(
@@ -146,7 +175,7 @@ class _SignupPageState extends State<SignupPage> {
           ),
           const SizedBox(height: 30),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: signupClicked,
             style: ElevatedButton.styleFrom(
               padding:
                   const EdgeInsets.symmetric(horizontal: 155, vertical: 15),
