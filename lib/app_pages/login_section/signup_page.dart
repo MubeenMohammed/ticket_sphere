@@ -24,22 +24,36 @@ class _SignupPageState extends State<SignupPage> {
   final TextEditingController _confirmPasswordController =
       TextEditingController();
 
-  void signupClicked() {
+  String errorToDisplay = "";
+
+  void signupClicked() async {
     if (_passwordController.text == _confirmPasswordController.text) {
-      FirebaseAuth.instance
-          .createUserWithEmailAndPassword(
-        email: _emailController.text,
-        password: _passwordController.text,
-      )
-          .then(
-        (onValue) {
-          widget.switchLoginScreen("login-page");
-        },
-      ).onError(
-        (error, stackTrace) {
-          print("Error ${error.toString()}");
-        },
-      );
+      try {
+        await FirebaseAuth.instance
+            .createUserWithEmailAndPassword(
+          email: _emailController.text,
+          password: _passwordController.text,
+        )
+            .then(
+          (onValue) {
+            widget.switchLoginScreen("login-page");
+          },
+        );
+      } on FirebaseAuthException catch (e) {
+        setState(() {
+          if (e.code == 'weak-password') {
+            errorToDisplay = "The password provided is too weak.";
+          } else if (e.code == 'email-already-in-use') {
+            errorToDisplay = "The account already exists for that email.";
+          } else {
+            errorToDisplay = e.message!;
+          }
+        });
+      }
+    } else {
+      setState(() {
+        errorToDisplay = "Passwords doesnt match.";
+      });
     }
   }
 
@@ -172,6 +186,13 @@ class _SignupPageState extends State<SignupPage> {
               ),
             ),
             obscureText: _obscureText,
+          ),
+          const SizedBox(height: 10),
+          Text(
+            errorToDisplay,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
           ),
           const SizedBox(height: 30),
           ElevatedButton(

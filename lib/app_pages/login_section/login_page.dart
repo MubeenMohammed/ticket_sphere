@@ -22,24 +22,34 @@ class _LoginPageState extends State<LoginPage> {
 
   bool _isRememberMe = false;
 
+  String errorMessage = '';
+
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
-  void signinClicked() {
-    FirebaseAuth.instance
-        .signInWithEmailAndPassword(
-      email: _emailController.text,
-      password: _passwordController.text,
-    )
-        .then(
-      (onValue) {
-        widget.switchToHomePage("home-page");
-      },
-    ).onError(
-      (error, stackTrace) {
-        print("Error ${error.toString()}");
-      },
-    );
+  Future<void> signinClicked() async {
+    try {
+      await FirebaseAuth.instance
+          .signInWithEmailAndPassword(
+        email: _emailController.text,
+        password: _passwordController.text,
+      )
+          .then(
+        (onValue) {
+          widget.switchToHomePage("home-page");
+        },
+      );
+    } on FirebaseAuthException catch (e) {
+      setState(() {
+        if (e.code == "user-not-found") {
+          errorMessage = "Account does not exist.";
+        } else if (e.code == "wrong-password") {
+          errorMessage = "Invalid credentials.";
+        } else {
+          errorMessage = e.message!;
+        }
+      });
+    }
   }
 
   @override
@@ -144,6 +154,11 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ],
+          ),
+          const SizedBox(height: 10),
+          Text(
+            errorMessage,
+            style: const TextStyle(fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 30),
           ElevatedButton(
