@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ticket_sphere/ticket_sphere.dart';
+import 'package:ticket_sphere/app_pages/ticket_sphere.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 

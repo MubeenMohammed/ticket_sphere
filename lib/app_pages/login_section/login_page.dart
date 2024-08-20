@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:ticket_sphere/services/auth.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({
@@ -18,6 +19,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final AuthService _auth = AuthService();
+
   bool _obscureText = true;
 
   bool _isRememberMe = false;
@@ -199,8 +202,16 @@ class _LoginPageState extends State<LoginPage> {
           ),
           const SizedBox(height: 20),
           OutlinedButton(
-            onPressed: () {
-              widget.switchToHomePage("home-page");
+            onPressed: () async {
+              dynamic user = await _auth.signInAnon();
+              if (user == null) {
+                print("Error signing in");
+              } else {
+                print("signed in");
+                print(user);
+                widget.switchToHomePage("home-page");
+              }
+              
             },
             style: const ButtonStyle(
               padding: WidgetStatePropertyAll(
