@@ -207,11 +207,8 @@ class _LoginPageState extends State<LoginPage> {
               if (user == null) {
                 print("Error signing in");
               } else {
-                print("signed in");
-                print(user);
                 widget.switchToHomePage("home-page");
               }
-              
             },
             style: const ButtonStyle(
               padding: WidgetStatePropertyAll(
